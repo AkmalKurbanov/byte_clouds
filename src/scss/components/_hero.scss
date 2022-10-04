@@ -2,8 +2,12 @@
   @include adaptiv('padding-top', 65, 15, 0);
   @include adaptiv('padding-bottom', 110, 25, 0);
 
+  @include xs {
+    text-align: center;
+  }
+
   &__wrap {
-    width: 59%;
+    width: 65%;
     position: relative;
   }
 
@@ -16,18 +20,15 @@
     right: rem(13);
     top: 50%;
     transform: translateY(-50%);
-    @include adaptiv('min-width', 690, 205, 0);
-    @include adaptiv('max-width', 690, 205, 0);
+    @include adaptiv('min-width', 690, 135, 0);
+    @include adaptiv('max-width', 690, 135, 0);
 
     @include sm {
-      max-width: rem(240);
-      min-width: rem(240);
+
       right: rem(-8);
     }
 
     @include xs {
-      max-width: rem(205);
-      min-width: rem(205);
       right: rem(-8);
     }
 
@@ -44,21 +45,15 @@
     @include adaptiv('margin-bottom', 30, 15, 0);
     @include adaptiv('line-height', 88, 41, 0);
 
-    @keyframes dash {
-      from {
-        stroke-dashoffset: 822;
-      }
-
-      to {
-        stroke-dashoffset: 0;
-      }
+    @include xs {
+      text-align: left;
     }
 
     span {
       position: relative;
       z-index: 1;
 
-      svg {
+      img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -79,7 +74,13 @@
 
     @include xs {
       font-size: rem(16);
+      text-align: left;
     }
   }
 
+  .btn {
+    @include xs {
+      margin-top: rem(24);
+    }
+  }
 }

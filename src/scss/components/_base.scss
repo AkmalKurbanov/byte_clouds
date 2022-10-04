@@ -197,7 +197,7 @@ button {
     transition: $tr;
     margin-right: rem(5);
     text-align: center;
-
+    margin-bottom: rem(5);
     @include xs {
       display: block;
       width: calc(100% - 14px);

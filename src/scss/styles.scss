@@ -6,7 +6,8 @@
 // css файлы библиотек/плагинов
 // @import "../../node_modules/--/--/";
 
-@import "../../node_modules/normalize.css/normalize.css";
+// @import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/swiper/swiper-bundle.min.css";
 //---------------------------------------------
 
 // подключение сгенерированных иконок(fontello),
@@ -34,4 +35,13 @@
 
 @import "components/base";
 @import "components/header";
+@import "components/hero";
+@import "components/partners";
+@import "components/about";
+@import "components/services";
+@import "components/process";
+@import "components/form";
+@import "components/projects";
+@import "components/reviews";
+@import "components/contacts";
 @import "components/footer";

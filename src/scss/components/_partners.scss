@@ -1,0 +1,46 @@
+.partners {
+  @include adaptiv('margin-top', 90, 22, 0);
+  @include adaptiv('margin-bottom', 150, 10, 0);
+
+  .swiper-container {
+    padding: rem(15) rem(5);
+    margin-top: rem(-15);
+    @include xs {
+      padding-bottom: rem(29);
+    }
+
+    .swiper-pagination {
+      bottom: 0;
+      display: none;
+
+      span {
+        background-color: #808080;
+        opacity: .5;
+
+        &.swiper-pagination-bullet-active {
+          opacity: 1;
+        }
+      }
+
+      @include xs {
+        display: block;
+      }
+    }
+  }
+
+  &__item {
+    border-radius: rem(20);
+    background-color: $wc;
+    box-shadow: 0px 4px 9px rgba(163, 163, 163, 0.25);
+    @include adaptiv('height', 80, 63, 0);
+    @include aic-jcc;
+    position: relative;
+
+    img {
+      position: absolute;
+      width: auto;
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+.hero {
+  @include adaptiv('padding-top', 65, 15, 0);
+  @include adaptiv('padding-bottom', 110, 25, 0);
+
+  &__wrap {
+    width: 59%;
+    position: relative;
+  }
+
+  .container-ins {
+    position: relative;
+  }
+
+  &__img {
+    position: absolute;
+    right: rem(13);
+    top: 50%;
+    transform: translateY(-50%);
+    @include adaptiv('min-width', 690, 205, 0);
+    @include adaptiv('max-width', 690, 205, 0);
+
+    @include sm {
+      max-width: rem(240);
+      min-width: rem(240);
+      right: rem(-8);
+    }
+
+    @include xs {
+      max-width: rem(205);
+      min-width: rem(205);
+      right: rem(-8);
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  &__title {
+    color: $bc;
+    font-weight: 700;
+    @include adaptiv('font-size', 68, 32, 0);
+    @include adaptiv('margin-bottom', 30, 15, 0);
+    @include adaptiv('line-height', 88, 41, 0);
+
+    @keyframes dash {
+      from {
+        stroke-dashoffset: 822;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -2;
+        width: calc(100% + 10%);
+        max-width: calc(100% + 10%);
+      }
+    }
+  }
+
+  &__subtitle {
+    color: rgba($bc, .6);
+    font-weight: 700;
+    @include adaptiv('font-size', 44, 16, 0);
+    @include adaptiv('margin-bottom', 40, 10, 0);
+    @include adaptiv('line-height', 57, 20, 0);
+
+    @include xs {
+      font-size: rem(16);
+    }
+  }
+
+}

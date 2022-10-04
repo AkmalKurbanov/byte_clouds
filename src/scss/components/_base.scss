@@ -1,13 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  line-height: normal;
 }
 
 html,
 body {
   height: 100%;
   position: relative;
-  // font-family: $helvetica;
+  font-family: $nunito;
 }
 
 a {
@@ -46,16 +48,18 @@ button {
     flex: 1 0 auto;
   }
 }
+
 // flex footer end
 
 // container
 .container {
   width: 100%;
-  padding-right: rem(15px);
-  padding-left: rem(15px);
+  // @include adaptiv('padding-left', 150, 15, 0);
+  // @include adaptiv('padding-right', 150, 15, 0);
+  padding: 0 rem(15);
   margin-right: auto;
   margin-left: auto;
-  max-width: rem(1170px);
+  max-width: rem(1530px);
   position: relative;
   box-sizing: border-box;
 
@@ -76,5 +80,189 @@ button {
   }
 }
 
+.container-ins {
+  max-width: rem(1230);
+  width: 100%;
+  margin: auto;
+  padding: 0 rem(15);
+}
+
 
 // container end
+
+
+
+// border radius
+.border-radius {
+  @include adaptiv('border-radius', 34, 15, 0);
+  overflow: hidden;
+}
+
+// border radius end
+// border 
+.border {
+  border: rem(1) solid $bc;
+}
+
+// border end
+
+
+.bg-gray {
+  background-color: #FAFAFA;
+  @include adaptiv('border-radius', 30, 15, 0);
+}
+
+
+// button
+.btn {
+  background-color: $bc;
+  @include adaptiv('font-size', 16, 10, 0);
+  @include aic-jcc;
+  display: inline-flex;
+  text-transform: uppercase;
+  @include adaptiv('padding-top', 15, 10, 0);
+  @include adaptiv('padding-bottom', 15, 10, 0);
+  @include adaptiv('padding-left', 30, 25, 0);
+  @include adaptiv('padding-right', 30, 25, 0);
+  border-radius: rem(30);
+  color: $wc;
+  transition: $tr;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+  text-align: center;
+  &:hover {
+    background-color: $mc;
+    box-shadow: -1px 4px 9px rgba(73, 73, 73, 0.3);
+  }
+
+  &--white {
+    border: rem(1) solid $wc;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $wc;
+      color: $bc;
+    }
+  }
+}
+
+// button end
+
+// title
+.title {
+  @include adaptiv('font-size', 40, 32, 0);
+  @include adaptiv('line-height', 52, 41, 0);
+  @include adaptiv('margin-bottom', 40, 20, 0);
+
+  @include xs {
+    text-align: center;
+  }
+
+  &--white {
+    color: $wc;
+  }
+}
+
+// title end 
+
+
+
+// text
+.text {
+  font-size: rem(22);
+  line-height: rem(31);
+  color: rgba($bc, .6);
+  @include adaptiv('margin-bottom', 35, 24, 0);
+}
+
+// text end
+
+
+
+// tag
+.tags {
+  margin: rem(20) 0;
+
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: rem(15);
+    padding: rem(10);
+    min-height: rem(40);
+    border: rem(1) solid;
+    border-color: $bc;
+    color: $bc;
+    transition: $tr;
+    margin-right: rem(5);
+    text-align: center;
+
+    @include xs {
+      display: block;
+      width: calc(100% - 14px);
+      margin: 0 auto;
+      margin-bottom: rem(16);
+    }
+
+    &:hover,
+    &.active {
+      border-color: $mc;
+      color: $wc;
+      background-color: $mc;
+      cursor: pointer;
+    }
+
+    &:last-child {
+      margin: 0 !important;
+
+      @include xs {
+        margin: auto !important;
+      }
+    }
+  }
+
+  &--white {
+    .tag {
+      color: $wc;
+      border-color: $wc;
+    }
+  }
+}
+
+// tag end
+// input 
+.input-wrap {
+  background-color: $wc;
+  border-radius: rem(30);
+  margin-bottom: rem(20);
+  width: 100%;
+  max-width: rem(630);
+
+
+  @include xs {
+    margin-bottom: rem(15);
+    max-width: 100%;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  input {
+    padding: 0 rem(30);
+    width: 100%;
+    min-height: rem(60);
+    font-size: rem(16);
+
+    @include xs {
+      min-height: rem(50);
+    }
+
+    @include placeholder {
+      color: rgba($bc, .4);
+    }
+  }
+}
+
+// input end

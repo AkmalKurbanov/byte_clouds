@@ -1,0 +1,23 @@
+.services.bg-gray.container
+  .container-ins 
+    h2.title Услуги 
+    .text Разрабатываем и внедряем программное обеспечение которое помогает <br> бизнесу! Мы не пишем код ради кода! Мы создаем ценности и направляем <br> наш труд на улучшение бизнеса и жизнь бизнесменов. 
+    .swiper-container.services-js
+      .swiper-wrapper
+        mixin service(name, img)
+          .swiper-slide 
+            .services__item.border-radius.border
+              .services__name=name
+              .services__img
+                img(src="assets/img/service"+img+".webp", alt="")
+              .services__info 
+                .text Автоматизация - новые возможности для руководства и сотрудников компании, оптимизация операционной деятельности, масштабирование бизнеса.
+                a(href="#order").btn.order-js Заказать разработку   
+        +service('Автоматизация бизнес процессов', 1)
+        +service('Разработка мобильных приложений', 2)
+        +service('Разработаем веб сервис или портал', 3)
+        +service('Консалтинг', 4)
+      
+
+
+

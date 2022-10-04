@@ -1,0 +1,19 @@
+.form.border-radius.container#order
+  .container-ins 
+    .title.title--white Заказать разработку:  
+    form(action="") 
+      .tags.tags--white 
+        mixin tag(name, active)
+          .tag(class=active)=name 
+        +tag('Разработка приложения', 'active')
+        +tag('Разработка сайта')
+        +tag('Telegram Бот')
+        +tag('Автоматизация')
+        +tag('Другое')
+      .input-wrap
+        input(type="text" placeholder="Имя")  
+      .input-wrap  
+        input(type="text" placeholder="Номер телефона")  
+      .form__control-btn
+        .btn.btn--white Свяжитесь со мной немедленно!  
+        .btn.btn--white Скачать бриф 

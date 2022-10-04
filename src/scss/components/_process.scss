@@ -1,0 +1,96 @@
+.process {
+  counter-reset: section;
+  @include adaptiv('padding-bottom', 150, 32, 0);
+
+  &__item {
+    @include aifs-jfcsb;
+    border-bottom: rem(1) solid rgba($bc, .3);
+    @include adaptiv('padding-top', 45, 32, 0);
+    @include adaptiv('padding-bottom', 40, 32, 0);
+
+    &:first-child {
+      border-top: rem(1) solid rgba($bc, .3);
+    }
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__title {
+    font-size: rem(34);
+    font-weight: 700;
+    position: relative;
+
+    @include md {
+      font-size: rem(20);
+    }
+
+    @include sm {
+      font-size: rem(27);
+      margin-bottom: rem(15);
+    }
+
+    &:before {
+      position: absolute;
+      counter-increment: section;
+      content: "0"counter(section)"";
+      color: rgba($mc, .3);
+      font-weight: 700;
+      font-size: rem(22);
+      left: 0;
+      bottom: 100%;
+
+      @include sm {
+        position: relative;
+        margin-right: rem(8);
+      }
+    }
+  }
+
+  &__item-col {
+    width: calc(33.33% - 10px);
+    padding: 0 rem(10);
+
+    @include sm {
+      width: 100%;
+    }
+
+    p {
+      line-height: rem(20.8);
+      color: rgba($bc, .7);
+
+      @include sm {
+        margin-bottom: rem(15);
+      }
+    }
+
+    ul {
+      margin-top: rem(20);
+
+      li {
+        font-weight: 700;
+        line-height: rem(20.8);
+        color: $bc;
+        margin-bottom: rem(5);
+        position: relative;
+        padding-left: rem(20);
+
+        &:before {
+          position: absolute;
+          content: '';
+          width: rem(9);
+          height: rem(9);
+          border-radius: 100%;
+          background-color: $mc;
+          left: 0;
+          top: rem(6);
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

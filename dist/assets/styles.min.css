@@ -859,6 +859,27 @@ button,input {
   color: rgba(0,0,0,.4);
 }
 
+.anim-items {
+  -webkit-transform: translateY(120%);
+  -ms-transform: translateY(120%);
+  transform: translateY(120%);
+  opacity: 0;
+  -webkit-transition: all .8s ease 0s;
+  -o-transition: all .8s ease 0s;
+  transition: all .8s ease 0s;
+}
+
+.anim-items.anim-active {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-in {
+  opacity: 0;
+}
+
 .header {
   padding-top: 1.25rem;
   padding-left: calc(0px + 145 * ((100vw - 320px)/ 1600));
@@ -1046,16 +1067,41 @@ button,input {
   z-index: 1;
 }
 
-.hero__title span img {
+.hero__title span img,.hero__title span svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-55%,-50%);
+  -ms-transform: translate(-55%,-50%);
+  transform: translate(-55%,-50%);
   z-index: -2;
-  width: calc(100% + 10%);
-  max-width: calc(100% + 10%);
+  width: 100%;
+  max-width: 100%;
+}
+
+.hero__title span img path,.hero__title span svg path {
+  fill: none;
+  stroke: rgba(241,106,33,.6);
+  stroke-miterlimit: 10;
+  stroke-width: 10;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  -webkit-animation: draw 1s linear forwards;
+  animation: draw 1s linear forwards;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+@-webkit-keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .hero__subtitle {
@@ -1073,10 +1119,22 @@ button,input {
   }
 }
 
+.hero__subtitle.anim-active {
+  -webkit-transition: all .8s ease .4s;
+  -o-transition: all .8s ease .4s;
+  transition: all .8s ease .4s;
+}
+
 @media (max-width:575.98px) {
   .hero .btn {
     margin-top: 1.5rem;
   }
+}
+
+.hero .btn.anim-active {
+  -webkit-transition: all .8s ease .8s;
+  -o-transition: all .8s ease .8s;
+  transition: all .8s ease .8s;
 }
 
 .partners {
@@ -1705,15 +1763,12 @@ button,input {
   }
 }
 
-.projects__item:nth-child(5) {
-  -webkit-box-ordinal-group: 7;
-  -ms-flex-order: 6;
-  order: 6;
-}
-
 @media (max-width:575.98px) {
   .projects__item:nth-child(5) {
     margin-bottom: 0;
+    -webkit-box-ordinal-group: 7;
+    -ms-flex-order: 6;
+    order: 6;
   }
 }
 
@@ -2151,12 +2206,19 @@ button,input {
 .footer__contacts ul li a {
   color: #000;
   font-weight: 700;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
 }
 
 @media (max-width:575.98px) {
   .footer__contacts ul li a {
     font-size: .875rem;
   }
+}
+
+.footer__contacts ul li a:hover {
+  color: #f16a21;
 }
 
 .footer__social ul {

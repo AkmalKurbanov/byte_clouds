@@ -1781,6 +1781,10 @@
   content: "\f393";
 }
 
+.fa-do-not-enter:before {
+  content: "\f5ec";
+}
+
 .fa-dochub:before {
   content: "\f394";
 }
@@ -4331,6 +4335,10 @@
 
 .fa-speakap:before {
   content: "\f3f3";
+}
+
+.fa-spider:before {
+  content: "\f717";
 }
 
 .fa-spinner:before {

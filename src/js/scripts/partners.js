@@ -1,4 +1,5 @@
 var swiper = new Swiper(".partners-js", {
+  lazy: true,
   loop: true,
   autoplay: {
     delay: 2500,

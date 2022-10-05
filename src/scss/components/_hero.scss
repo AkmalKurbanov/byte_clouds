@@ -53,15 +53,38 @@
       position: relative;
       z-index: 1;
 
-      img {
+      img,
+      svg {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-55%, -50%);
         z-index: -2;
-        width: calc(100% + 10%);
-        max-width: calc(100% + 10%);
+        width: 100%;
+        max-width: 100%;
+
+        path {
+          fill: none;
+          stroke: rgba($mc, .6);
+          stroke-miterlimit: 10;
+          stroke-width: 10;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 1s linear forwards;
+          animation-delay: 2s;
+
+        }
+
+        @keyframes draw {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
       }
+
+
+
     }
   }
 
@@ -76,11 +99,17 @@
       font-size: rem(16);
       text-align: left;
     }
+    &.anim-active {
+      transition: all .8s ease 0.4s;
+    }
   }
 
   .btn {
     @include xs {
       margin-top: rem(24);
+    }
+    &.anim-active {
+      transition: all .8s ease 0.8s;
     }
   }
 }

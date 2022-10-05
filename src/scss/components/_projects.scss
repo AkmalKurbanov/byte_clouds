@@ -113,10 +113,10 @@
     }
 
     &:nth-child(5) {
-      order: 6;
-
+      
       @include xs {
         margin-bottom: 0;
+        order: 6;
       }
     }
 

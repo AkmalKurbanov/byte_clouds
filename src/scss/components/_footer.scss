@@ -84,8 +84,14 @@
         a {
           color: $bc;
           font-weight: 700;
+          transition: $tr;
+
           @include xs {
             font-size: rem(14);
+          }
+
+          &:hover {
+            color: $mc;
           }
         }
       }
@@ -110,6 +116,7 @@
           transition: $tr;
           @include aic-jcc;
           font-weight: 700;
+
           &:hover {
             background-color: $mc;
             border-color: $mc;

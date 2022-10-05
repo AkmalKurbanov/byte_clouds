@@ -1,4 +1,5 @@
 var swiper = new Swiper(".reviews-js", {
+  lazy: true,
   loop: true,
   spaceBetween: 40,
   autoplay: {

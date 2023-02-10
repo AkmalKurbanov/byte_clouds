@@ -1,0 +1,16 @@
+.partners
+  .container-ins   
+    h2.title.fade-in Нам доверяют
+    .swiper-container.partners-js.fade-in
+      .swiper-wrapper
+        mixin partner(img)
+          .swiper-slide 
+            .partners__item
+              img(data-src="assets/img/partner"+img+".webp", alt="").swiper-lazy
+              
+        +partner(1)
+        +partner(2)
+        +partner(3)
+        +partner(4)
+        +partner(5)
+      .swiper-pagination

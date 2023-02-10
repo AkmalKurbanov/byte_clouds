@@ -1,0 +1,84 @@
+.process {
+  counter-reset: section;
+  @include adaptiv("padding-bottom", 150, 32, 0);
+
+  &__item {
+    border-bottom: rem(1) solid rgba($bc, 0.3);
+    @include adaptiv("padding-top", 30, 32, 0);
+    @include adaptiv("padding-bottom", 20, 10, 0);
+    position: relative;
+    padding-left: rem(95);
+
+    &:before {
+      position: absolute;
+      counter-increment: section;
+      content: "0" counter(section) "";
+      color: rgba($mc, 0.3);
+      font-weight: 700;
+      font-size: rem(70);
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-right: rem(15);
+
+      @include lg {
+        font-size: rem(55);
+      }
+           
+      @include sm {
+        top: rem(20);
+        transform: translate(0);
+      }
+
+      @include xs {
+        position: absolute;
+        font-size: rem(29);
+        top: rem(8);
+      }
+    }
+    &:first-child {
+      border-top: rem(1) solid rgba($bc, 0.3);
+    }
+
+    @include sm {
+      flex-direction: column;
+    }
+    @include xs {
+      padding: rem(10) 0;
+    }
+    p {
+      line-height: rem(20.8);
+      color: rgba($bc, 0.7);
+
+      @include sm {
+        margin-bottom: rem(15);
+      }
+
+      @include xs {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem(34);
+    font-weight: 600;
+    position: relative;
+    @include aic;
+    margin-bottom: rem(20);
+
+    @include md {
+      font-size: rem(20);
+    }
+
+    @include sm {
+      font-size: rem(27);
+      margin-bottom: rem(15);
+    }
+    @include xs {
+      padding-left: rem(50)
+    }
+  }
+}

@@ -1,0 +1,139 @@
+.price {
+  &__wrap {
+    @include jfcsb;
+    @include lg {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    width: calc(50% - 10px);
+    @include lg {
+      width: 100%;
+      margin-bottom: rem(30);
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__item-price {
+    font-size: rem(50);
+    margin-bottom: rem(20);
+    font-weight: 700;
+    @include sm {
+      margin-bottom: 0;
+    }
+  }
+  &__item-desc {
+    font-size: rem(18);
+  }
+  &__item {
+    padding: rem(20);
+    background-position: center;
+    background-size: cover;
+    ul {
+      li {
+        @include aic;
+        margin-bottom: rem(7);
+        &:last-child {
+          margin-bottom: 0;
+        }
+        svg {
+          margin-right: rem(8);
+          width: rem(20);
+          height: rem(20);
+        }
+      }
+    }
+    &--light {
+      ul {
+        li {
+          svg {
+            fill: $bc;
+          }
+        }
+      }
+    }
+    &--dark {
+      ul {
+        li {
+          color: rgba($wc, 0.7);
+          svg {
+            fill: $wc;
+          }
+        }
+      }
+      .price__item-col,
+      .price__theme {
+        border-color: $wc;
+      }
+      .price__theme,
+      .price__item-desc,
+      .price__item-price {
+        color: $wc;
+      }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+  &__theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: rem(6) rem(30);
+    font-size: rem(18);
+  }
+  &__item-col-wrap {
+    @include jfcsb;
+    margin: rem(10) 0 rem(20);
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__item-col {
+    @include aic;
+    border-right: rem(1) solid rgba($bc, 0.7);
+
+    @include sm {
+      border-right: none;
+      border-bottom: rem(1) solid rgba($bc, 0.7);
+    }
+
+    &:first-child {
+      padding-right: rem(10);
+      width: 40%;
+      @include sm {
+        width: 100%;
+        padding: rem(15) 0;
+        margin-bottom: rem(15);
+      }
+    }
+
+    &:last-child {
+      padding-left: rem(10);
+      border: none;
+      width: 60%;
+      @include sm {
+        width: 100%;
+        padding: 0;
+      }
+    }
+  }
+  .btn-wrap {
+    @include xs {
+      flex-direction: column;
+    }
+    .btn {
+      @include xs {
+        margin-right: 0;
+        margin-bottom: rem(15);
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

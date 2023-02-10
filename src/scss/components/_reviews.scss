@@ -1,0 +1,53 @@
+.reviews {
+  @include adaptiv('margin-bottom', 126, 32, 0);
+
+  .swiper-container {
+    padding: 0 rem(2);
+  }
+
+  &__item {
+    @include adaptiv('padding', 30, 24, 0);
+  }
+
+  &__top {
+    @include adaptiv('margin-bottom', 30, 24, 0);
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    font-weight: 700;
+    display: block;
+    margin-bottom: rem(5);
+  }
+
+  &__info {
+    span {
+      display: block;
+      color: rgba($bc, .5);
+    }
+  }
+
+  &__img {
+    width: rem(80);
+    height: rem(80);
+    border-radius: 100%;
+    overflow: hidden;
+    margin-right: rem(15);
+  }
+
+  &__text {
+    font-size: rem(20);
+    line-height: rem(26);
+
+    @include lg {
+      font-size: rem(15);
+      line-height: rem(20);
+    }
+
+    @include xs {
+      font-size: rem(20);
+      line-height: rem(26);
+    }
+  }
+}

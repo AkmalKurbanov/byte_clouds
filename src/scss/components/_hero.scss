@@ -1,0 +1,130 @@
+.hero {
+  @include adaptiv('padding-top', 65, 15, 0);
+  @include adaptiv('padding-bottom', 110, 25, 0);
+
+  @include xs {
+    text-align: center;
+  }
+
+
+  &__wrap {
+    width: 65%;
+    position: relative;
+     @include xs {
+      width: 100%;
+     }
+  }
+
+  .container-ins {
+    position: relative;
+   
+  }
+
+  &__img {
+    position: absolute;
+    right: rem(13);
+    top: 50%;
+    transform: translateY(-50%);
+    @include adaptiv('min-width', 690, 135, 0);
+    @include adaptiv('max-width', 690, 135, 0);
+
+    
+    @include sm {
+      right: rem(-8);
+    }
+
+    @include xs {
+      position: relative;
+      right: auto;
+      top: auto;
+      transform: translate(0);
+      margin: auto;
+      max-width: rem(335);
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  &__title {
+    color: $bc;
+    font-weight: 700;
+    @include adaptiv('font-size', 68, 32, 0);
+    @include adaptiv('margin-bottom', 30, 15, 0);
+    @include adaptiv('line-height', 88, 41, 0);
+
+    @include xs {
+      text-align: left;
+    }
+
+    span {
+      position: relative;
+      z-index: 1;
+
+      img,
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -50%);
+        z-index: -2;
+        width: 100%;
+        max-width: 100%;
+
+        path {
+          fill: none;
+          stroke: rgba($mc, .6);
+          stroke-miterlimit: 10;
+          stroke-width: 10;
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 1s linear forwards;
+          animation-delay: 2s;
+
+        }
+
+        @keyframes draw {
+          to {
+            stroke-dashoffset: 0;
+          }
+        }
+
+      }
+
+
+
+    }
+  }
+
+  &__subtitle {
+    color: #494949;
+    font-weight: 600;
+    @include adaptiv('font-size', 28, 16, 0);
+    @include adaptiv('line-height', 36, 20, 0);
+    @include adaptiv('margin-bottom', 35, 10, 0);
+
+    @include xs {
+      font-size: rem(16);
+      text-align: left;
+      font-weight: 700;
+    }
+    &.anim-active {
+      transition: all .8s ease 0.4s;
+    }
+    span{
+      color: $mc;
+    }
+  }
+
+  .btn {
+    @include xs {
+      margin-top: rem(24);
+    }
+    &.anim-active {
+      transition: all .8s ease 0.8s;
+    }
+  }
+}

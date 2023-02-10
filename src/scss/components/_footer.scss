@@ -1,0 +1,158 @@
+.footer {
+  flex: 0 0 auto;
+  @include adaptiv('padding-top', 120, 55, 0);
+  @include adaptiv('padding-bottom', 45, 24, 0);
+  @include xs {
+    padding-left: rem(15);  
+    padding-right: rem(15);  
+  }
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include adaptiv('padding-bottom', 95, 70, 0);
+    border-bottom: rem(1) solid rgba(#232323, .5);
+  }
+
+  &__col {
+    &:first-child {
+      @include sm {
+        width: 50%;
+        max-width: 50%;
+
+        a {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      max-width: rem(370);
+      width: 100%;
+
+      @include sm {
+        max-width: 50%;
+
+        ul {
+          text-align: right;
+        }
+      }
+    }
+
+    &:last-child {
+      max-width: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+  &__logo {
+    a {
+      display: flex;
+      align-items: flex-end;
+
+      @include sm {
+        flex-direction: column
+      }
+
+      img {
+        @include adaptiv('width', 80, 65, 0);
+      }
+    }
+
+    span {
+      color: $bc;
+      white-space: nowrap;
+      margin-left: rem(10);
+
+      @include sm {
+        margin-left: 0;
+        margin-top: rem(5);
+        display: block;
+      }
+
+    }
+  }
+
+  &__contacts {
+    margin-bottom: rem(15);
+
+    ul {
+      li {
+        margin-bottom: rem(15);
+          
+        
+        a {
+          color: $bc;
+          font-weight: 700;
+          transition: $tr;
+
+          @include xs {
+            font-size: rem(14);
+          }
+
+          &:hover {
+            color: $mc;
+          }
+        }
+      }
+    }
+  }
+
+  &__social {
+    ul {
+      max-width: rem(370);
+      width: 100%;
+      @include aic-jfcsb;
+
+      @include sm {
+        max-width: 100%;
+      }
+
+      li {
+        a {
+          color: $bc;
+          padding: rem(10);
+          border-radius: rem(20);
+          transition: $tr;
+          @include aic-jcc;
+          font-weight: 700;
+
+          &:hover {
+            background-color: $mc;
+            border-color: $mc;
+            color: $wc;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    @include aic-jfcsb;
+    @include adaptiv('padding-top', 20, 8, 0);
+
+    @include sm {
+      flex-direction: column;
+    }
+
+    p {
+      color: rgba($bc, .5);
+      @include adaptiv('font-size', 14, 9, 0);
+
+      @include sm {
+        width: 100%;
+      }
+
+      &:last-child {
+        @include sm {
+          text-align: right;
+          margin-top: rem(6);
+        }
+      }
+    }
+  }
+}

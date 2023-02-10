@@ -1,0 +1,66 @@
+.header {
+  padding-top: rem(20);
+  @include adaptiv('padding-left', 145, 0, 0);
+  @include adaptiv('padding-right', 145, 0, 0);
+  @include adaptiv('padding-bottom', 35, 24, 0);
+
+  @include xs {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+
+  &__wrap {
+    @include aic-jfcsb;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    width: 100%;
+    @include adaptiv('max-width', 168, 129, 0);
+
+    a {
+      display: flex;
+      @include aic;
+    }
+
+    @include sm {
+      margin: auto;
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__links {
+    @include aic;
+
+    @include xs {
+      @include jcc;
+      width: 100%;
+    }
+  }
+
+  &__links-item {
+    @include aic-jcc;
+    @include adaptiv('font-size', 16, 16, 0);
+    padding: rem(6) rem(10);
+    min-height: rem(34);
+    min-width: rem(120);
+    margin-right: rem(24);
+    color: $bc;
+    transition: $tr;
+
+    &:hover {
+      background-color: $mc;
+      color: $wc;
+      border-color: $mc;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

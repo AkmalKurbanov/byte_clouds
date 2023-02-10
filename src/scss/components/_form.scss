@@ -1,0 +1,124 @@
+.form {
+  background-color: #282828;
+  position: relative;
+
+  @include adaptiv("padding-top", 60, 32, 0);
+  @include adaptiv("padding-bottom", 100, 32, 0);
+  @include adaptiv("margin-bottom", 150, 32, 0);
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    width: rem(228);
+    height: rem(225);
+    filter: blur(130.5px);
+    pointer-events: none;
+  }
+
+  &:before {
+    background-color: rgba($wc, 0.5);
+    @include adaptiv("top", 22, 150, 0);
+    @include adaptiv("right", 75, 0, 0);
+  }
+
+  &:after {
+    background-color: rgba($mc, 0.5);
+    @include adaptiv("top", 215, 270, 0);
+    @include adaptiv("right", 220, 28, 0);
+  }
+
+  .tags {
+    margin-top: 0;
+    margin-bottom: rem(50);
+
+    @include xs {
+      margin-bottom: rem(40);
+    }
+  }
+
+  &__control-btn {
+    @include aic;
+
+    @include xs {
+      flex-direction: column;
+    }
+
+    .btn {
+      margin-right: rem(25);
+      @include sm {
+        min-height: rem(50);
+        width: 100%;
+      }
+      @include xs {
+        margin-right: 0;
+        margin-bottom: rem(15);
+        width: 100%;
+        font-size: rem(13);
+        font-weight: 700;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.tab {
+  .tabs_item {
+    display: none;
+    &:first-child {
+      display: block;
+    }
+  }
+  .tabs {
+    @include aic;
+    @include sm {
+      flex-direction: column;
+    }
+    li {
+      margin-right: rem(10);
+
+      @include sm {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: rem(13);
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+      &.current {
+        a {
+          background-color: $mc;
+          color: $wc;
+          border-color: $mc;
+        }
+      }
+      a {
+        @include sm {
+          display: flex;
+        }
+      }
+    }
+  }
+  .contacts {
+    padding: 0;
+  }
+  .btn-wrap {
+    margin-top: rem(20);
+    display: inline-flex;
+    @include sm {
+      @include fdc;
+    }
+    .btn {
+      @include sm {
+        margin-right: 0;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

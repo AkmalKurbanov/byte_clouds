@@ -1,0 +1,218 @@
+.projects {
+  @include adaptiv("margin-bottom", 150, 32, 0);
+  @include xs {
+    padding: 0 rem(15);
+  }
+  &__wrap {
+    @include fww-jfcsb;
+    align-items: stretch;
+    min-height: rem(150);
+  }
+
+  &__item {
+    @include fdc;
+    @include adaptiv("margin-bottom", 40, 15, 0);
+    position: relative;
+
+    &--lg {
+      width: 65.58%;
+
+      @include lg {
+        width: calc(50% - 10px);
+      }
+
+      @include xs {
+        width: 100%;
+      }
+    }
+
+    &--sm {
+      width: 31.16%;
+      position: relative;
+
+      @include lg {
+        width: calc(50% - 10px);
+      }
+
+      @include xs {
+        width: 100%;
+      }
+
+      .projects__info {
+        .text {
+          line-height: normal;
+          font-size: rem(15);
+
+          @include lg {
+            @include adaptiv("font-size", 22, 10, 0);
+            @include adaptiv("line-height", 28, 13, 0);
+          }
+        }
+      }
+    }
+
+    &--modify {
+      flex-direction: row-reverse;
+      align-items: stretch;
+      justify-content: space-between;
+      padding-right: rem(65);
+
+      @include lg {
+        flex-direction: column;
+        padding-right: 0;
+        justify-content: inherit;
+      }
+
+      @include xs {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      .projects__name {
+        font-weight: 600;
+        @include adaptiv("font-size", 40, 32, 0);
+
+        @include lg {
+          @include adaptiv("padding-top", 20, 14, 0);
+          @include adaptiv("padding-bottom", 20, 15, 0);
+          @include adaptiv("padding-left", 20, 14, 0);
+          padding-right: rem(10);
+          @include adaptiv("font-size", 20, 13, 0);
+          font-weight: 700;
+          width: 100%;
+        }
+
+        @include xs {
+          font-size: rem(32);
+          text-align: center;
+        }
+      }
+
+      .projects__img {
+        @include aic-jcc;
+        max-width: rem(252);
+        min-width: rem(252);
+        border: none;
+        height: auto;
+
+        @include lg {
+          max-width: 100%;
+          min-width: 100%;
+          height: rem(320);
+          border-bottom: rem(1) solid $bc;
+        }
+
+        @include xs {
+          max-width: rem(116);
+          min-width: rem(116);
+          width: 100%;
+          border: none;
+          padding-left: 0;
+          padding-right: 0;
+          padding-top: 0;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      @include xs {
+        margin-bottom: 0;
+        order: 6;
+      }
+    }
+
+    &:last-child {
+      @include xs {
+        order: 5;
+      }
+    }
+
+    &:hover {
+      .projects__info {
+        display: block;
+      }
+    }
+  }
+
+  &__img {
+    position: relative;
+    overflow: hidden;
+    border-bottom: rem(1) solid $bc;
+    @include aic-jcc;
+    // padding: rem(15);
+    height: rem(320);
+    background-color: $bc;
+    @include sm {
+      height: rem(270) !important;
+    }
+
+    @include xs {
+      height: auto !important;
+    }
+
+    img {
+      width: auto;
+      position: absolute;
+      object-fit: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      @include xs {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+      }
+    }
+  }
+
+  &__name,
+  &__info {
+    @include adaptiv("padding-top", 20, 14, 0);
+    @include adaptiv("padding-bottom", 20, 15, 0);
+    @include adaptiv("padding-left", 20, 14, 0);
+    padding-right: rem(10);
+    @include adaptiv("font-size", 20, 13, 0);
+    font-weight: 700;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $wc;
+    display: none;
+
+    .projects__name {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    img {
+      max-width: rem(245);
+      width: 100%;
+      margin-left: rem(20);
+
+      @include lg {
+        max-width: rem(150);
+      }
+
+      @include md {
+        display: none;
+      }
+    }
+  }
+
+  &__desc {
+    @include aic-jfcsb;
+
+    .text {
+      @include adaptiv("font-size", 22, 10, 0);
+      @include adaptiv("line-height", 28, 13, 0);
+      margin-bottom: 0;
+    }
+  }
+}

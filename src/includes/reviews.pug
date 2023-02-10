@@ -1,0 +1,22 @@
+.reviews
+  .container-ins 
+    h2.title.fade-in Что говорят наши клиенты
+    .swiper-container.reviews-js.fade-in
+      .swiper-wrapper
+        mixin review(name, info, img)
+          .swiper-slide 
+            .reviews__item.border-radius.border
+              .reviews__top 
+                .reviews__img
+                  img(data-src="assets/img/review.webp", alt="").swiper-lazy
+                .reviews__info 
+                  .reviews__name Даниил Б.
+                  span Информационная <br> безопасность
+              .reviews__text Сотрудничаем более 10 лет с Byte Clouds. За это время реализовано много крупных проектов. Для меня очень важна последующая тех. поддержка. На протяжении всего времени ни разу не ощущали себя брошенными, в любое время реагируют. Консультируют не только нас, но и лично наших клиентов. Ребята из этой компании уже больше друзья чем партнёры.
+              
+
+        +review
+        +review
+        +review
+    
+  

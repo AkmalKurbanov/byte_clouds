@@ -1,0 +1,31 @@
+.services.bg-gray.container
+  .container-ins 
+    h2.title.fade-in Что значит под ключ? 
+    .text.fade-in Сайт «под ключ» означает, что заказчик получит полный комплекс услуг «от А до Я» по созданию сайта. Достаточно лишь выбрать профессионального исполнителя и поставить перед ним задачу. 
+      | Это позволяет экономить время и тратить его с пользой, при этом гарантированно получая результат — готовый сайт, который полностью соответствует поставленным задачам и требованиям заказчика.
+    .swiper-container.services-js.fade-in
+      .swiper-wrapper
+        mixin service(name, img)
+          .swiper-slide 
+            .services__item.border-radius.border
+              .services__name=name
+              .services__img
+                img(data-src="assets/img/service"+img+".webp", alt="").swiper-lazy
+                
+                
+              .services__info 
+                .text=name 
+                  | Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, laborum?
+                a(href="#order").btn.order-js Заказать разработку   
+        +service('Создание оригинального дизайна ', 1)
+        +service('Программирование и верстка ', 2)
+        +service('Подготовка сайта к SEO-продвижению ', 3)
+        +service('В подарок домен в зоне .kg и хостинг на 1 год ', 4)
+    br  
+    p.text
+      span + 
+      | Окажем техническую поддержку в любое время в течение года. 
+      | Обеспечим работоспособность вашего сайта, регулярно поддерживая и развивая ваш проект.
+
+
+

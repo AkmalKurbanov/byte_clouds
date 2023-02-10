@@ -1,0 +1,105 @@
+.contacts {
+  background-color: #272727;
+  @include adaptiv("padding-top", 100, 24, 0);
+  @include adaptiv("padding-bottom", 100, 14, 0);
+  border-radius: rem(30);
+
+  @include xs {
+    padding: rem(15);
+  }
+  
+  &__wrap {
+    @include aifs-jfcsb;
+
+    @include sm {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    width: 100%;
+
+    &:first-child {
+      padding-right: rem(30);
+
+      @include sm {
+        margin-bottom: rem(30);
+        padding-right: 0;
+      }
+      @include xs {
+        padding: rem(10);
+      }
+      .btn {
+        @include sm {
+          display: none;
+        }
+      }
+    }
+
+    &:last-child {
+      .btn {
+        display: none;
+
+        @include sm {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .btn {
+    margin-bottom: rem(15);
+
+    @include xs {
+      max-width: 100%;     
+    }
+  }
+
+  &__block {
+    @include aifs;
+
+    p {
+      line-height: rem(27);
+    }
+  }
+
+  ul {
+    li {
+      margin-bottom: rem(10);
+
+      a {
+        color: $mc;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .whiteP,
+  .grayP {
+    font-weight: 600;
+    margin-bottom: rem(10);
+  }
+
+  .whiteP {
+    color: $wc;
+  }
+
+  .grayP {
+    color: rgba($wc, 0.5);
+  }
+
+  #map {
+    @include adaptiv("min-width", 785, 270, 0);
+    @include adaptiv("min-height", 570, 265, 0);
+    border: rem(1) solid $wc;
+
+    @include sm {
+      margin-bottom: rem(40);
+    }
+  }
+  .title {
+    @include xs {
+      display: none;
+    }
+  }
+}

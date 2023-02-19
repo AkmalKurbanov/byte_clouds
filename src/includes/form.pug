@@ -12,13 +12,13 @@
           a(href='#').tag Позвонить нам
       .tab_content
         .tabs_item 
-          form(action="") 
+          form#form
             .input-wrap
-              input(type="text" placeholder="Имя")  
+              input(type="text" placeholder="Имя" name="name")  
             .input-wrap  
-              input(type="text" placeholder="Номер телефона")  
+              input(type="text" placeholder="Номер телефона" name="phone")  
             .form__control-btn
-              .btn.btn--white-solid Свяжитесь со мной немедленно!  
+              button(type="submit").btn.btn--white-solid Свяжитесь со мной немедленно!  
         .tabs_item
           .contacts
             p.whiteP Мы находимся по адресу:

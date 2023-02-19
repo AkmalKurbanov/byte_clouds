@@ -16,6 +16,19 @@
 <body>
   <div class="wrapper">
     <div class="content">
+      <div class="popup">
+        <div class="popup__window">
+          <div class="popup__window-close">✕</div>
+          <div class="popup__window-wrap">
+            <h1>h1 accent color title</h1>
+            <h2>h2 Title</h2>
+            <h3>h3 Title</h3>
+            <h4>h4 Title</h4>
+            <p>subtitle</p><br><br>
+            <div class="popup__btn"><a class="btn" href="#">Button 1</a><a class="btn" href="#">Button 2</a></div>
+          </div>
+        </div>
+      </div>
       <header class="header"> 
         <div class="container">
           <div class="container-ins">
@@ -374,15 +387,15 @@
             </ul>
             <div class="tab_content">
               <div class="tabs_item"> 
-                <form action=""> 
+                <form id="form">
                   <div class="input-wrap">
-                    <input type="text" placeholder="Имя">
+                    <input type="text" placeholder="Имя" name="name">
                   </div>
                   <div class="input-wrap"> 
-                    <input type="text" placeholder="Номер телефона">
+                    <input type="text" placeholder="Номер телефона" name="phone">
                   </div>
                   <div class="form__control-btn">
-                    <div class="btn btn--white-solid">Свяжитесь со мной немедленно!  </div>
+                    <button class="btn btn--white-solid" type="submit">Свяжитесь со мной немедленно!  </button>
                   </div>
                 </form>
               </div>
@@ -591,4 +604,5 @@
   </script>
   <script src="assets/lazyload.min.js"></script>
   <script src="assets/scripts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"> </script>
 </body>

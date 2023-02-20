@@ -5,6 +5,7 @@
       | Это позволяет экономить время и тратить его с пользой, при этом гарантированно получая результат — готовый сайт, который полностью соответствует поставленным задачам и требованиям заказчика.
     .swiper-container.services-js.fade-in
       .swiper-wrapper
+        
         mixin service(name, img)
           .swiper-slide 
             .services__item.border-radius.border
@@ -21,6 +22,9 @@
         +service('Программирование и верстка ', 2)
         +service('Подготовка сайта к SEO-продвижению ', 3)
         +service('В подарок домен в зоне .kg и хостинг на 1 год ', 4)
+
+      .swiper-pagination
+
     br  
     p.text
       span + 

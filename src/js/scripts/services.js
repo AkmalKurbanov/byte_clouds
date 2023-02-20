@@ -2,10 +2,10 @@ var swiper = new Swiper(".services-js", {
   lazy: true,
   loop: true,
   spaceBetween: 15,
-  // autoplay: {
-  //   delay: 4000,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true

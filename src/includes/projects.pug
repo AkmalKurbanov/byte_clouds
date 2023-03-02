@@ -2,7 +2,8 @@
   .container-ins 
     h2.title.fade-in Проекты, которыми гордимся
     .projects__wrap
-      mixin project(img,name,size,modify)
+      //- mixin project(img,name,size,modify, id)
+      mixin project(img,name,size)
         .projects__item.border-radius.border(class="projects__item--"+size).fade-in
           .projects__img
             img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/project"+img+".webp", alt="").lazy
@@ -13,16 +14,33 @@
               .text Реализована панель управления системой, где можно создавать номенклатуру и указывать размер бонуса. Все данные передаются в мобильное приложение, где пользователь сканирует IMEI при продаже. Администратор видит продажи, получает отчеты по проданным товарам, а также начисляет выплату бонусов.
               if size == "lg"
                 img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/project-info.webp", alt="").lazy
-              else  
+              else
+            a(href="#project"+img data-fancybox).btn Смотреть 
 
-      +project('1','Разработка платформы для приема заявок <br> на кредитование с мобильного приложения','lg')  
-      +project('2','Система управления <br> деятельностью для Таис Плюс','sm')  
-      +project('3','Разработка платформы по <br> привлечению инвестиций.','sm')  
-      +project('4','Разработка платформы для приема заявок <br> на кредитование с мобильного приложения','lg')  
+        .projects__popup(id="project"+img style="display:none")
+          .projects__popup-laptop
+            img(src="assets/img/laptop.webp", alt="").projects__popup-laptop-img
+            .projects__popup-landing
+              img(src="assets/img/pr-landing"+img+".webp", alt="")
+
+      //- +project('1','Разработка платформы для приема заявок <br> на кредитование с мобильного приложения','lg')  
+      //- +project('2','Система управления <br> деятельностью для Таис Плюс','sm')  
+      //- +project('3','Разработка платформы по <br> привлечению инвестиций.','sm')  
+      //- +project('4','Разработка платформы для приема заявок <br> на кредитование с мобильного приложения','lg')  
       
-      .projects__item.projects__item--lg.projects__item--modify.border-radius.border
-        .projects__img
-          img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/project5.webp", alt="").lazy
-        .projects__name Это место ждет <br> Вашего проекта
+      //- .projects__item.projects__item--lg.projects__item--modify.border-radius.border
+      //-   .projects__img
+      //-     img(src="data:image/gif;base64,R0lGODlhBwAFAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAUAAAIFjI+puwUAOw==" data-src="assets/img/project5.webp", alt="").lazy
+      //-   .projects__name Это место ждет <br> Вашего проекта
       
-      +project('6','Разработка REST API для поиска, <br> заказа и оплаты страховых услуг <br> компании Uremont','sm')  
+      //- +project('6','Разработка REST API для поиска, <br> заказа и оплаты страховых услуг <br> компании Uremont','sm')  
+      
+      
+      +project('1','Одностраничный сайт для доставки крафтового пива','sm','project1')  
+      +project('2','Сайт для адвокатской компании Kuzmin Partners','sm')  
+      +project('3','Лендинг для Тату студии','sm')  
+      +project('4','Лендинг для медицинской клиники VitaCare','sm')  
+      +project('5','Лендинг в темных тонах для любителей настоящих сигар','sm')  
+      +project('6','Яркий лендинг для крупного поставщика шин и колес','sm')
+
+

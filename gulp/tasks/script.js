@@ -14,6 +14,7 @@ module.exports = function script() {
   return gulp.src([
       'node_modules/jquery/dist/jquery.js',
       'node_modules/swiper/swiper-bundle.min.js',
+      'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.js',
       'src/js/scripts/*.js'
     ])
     // подключение библиотек
